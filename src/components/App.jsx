@@ -1,7 +1,9 @@
 import { Component } from 'react';
+// ismport { componentDidUpdate } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
+const LOCAL_STORAGE_CONTACTS_KEY = 'contacts';
 
 export class App extends Component {
   state = {
@@ -13,6 +15,26 @@ export class App extends Component {
     ],
     filter: '',
   };
+
+  componentDidMount() {
+    const prevContacts = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_CONTACTS_KEY)
+    );
+    if (prevContacts) {
+      this.setState({
+        contacts: prevContacts,
+      });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.contacts.length !== this.state.contacts.length) {
+      localStorage.setItem(
+        LOCAL_STORAGE_CONTACTS_KEY,
+        JSON.stringify(this.state.contacts)
+      );
+    }
+  }
 
   handleFormSubmit = contact => {
     console.log('contact', contact);
