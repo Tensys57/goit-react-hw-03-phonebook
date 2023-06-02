@@ -1,0 +1,10 @@
+.filterInput {
+  display: flex;
+
+  outline: 1px solid cornflowerblue;
+  height: 40px;
+  width: 300px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  font-size: 24px;
+}

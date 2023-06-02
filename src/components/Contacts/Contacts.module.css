@@ -1,0 +1,25 @@
+p {
+  margin: 0;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  margin: 0;
+}
+
+.contactItem {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.deleteBtn {
+  width: 120px;
+  height: 40px;
+  font-size: 18px;
+}
