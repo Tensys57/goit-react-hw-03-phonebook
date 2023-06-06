@@ -63,9 +63,9 @@ export class App extends Component {
     const filteredContacts = this.getFilteredContacts();
     return (
       <div class="container">
-        <h1>Phonebook</h1>
+        <h2>Phonebook</h2>
         <ContactForm onSubmitContact={this.handleFormSubmit} />
-        <h2>Contacts</h2>
+        <h3>Contacts</h3>
         <Filter value={filter} onChange={this.changeFilter} />
         <Contacts
           contacts={filteredContacts}
