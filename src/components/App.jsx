@@ -1,5 +1,4 @@
 import { Component } from 'react';
-// ismport { componentDidUpdate } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
@@ -7,12 +6,7 @@ const LOCAL_STORAGE_CONTACTS_KEY = 'contacts';
 
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
 
@@ -68,16 +62,7 @@ export class App extends Component {
     const { filter } = this.state;
     const filteredContacts = this.getFilteredContacts();
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
+      <div class="container">
         <h1>Phonebook</h1>
         <ContactForm onSubmitContact={this.handleFormSubmit} />
         <h2>Contacts</h2>
